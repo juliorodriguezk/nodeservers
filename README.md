@@ -21,9 +21,11 @@ const PORT = 80;
 var app = express();
 // Aranque del servidor
 app.listen(PORT, () => console.log("http server escucha en el puerto " + PORT + " ...")); 
- // Si se accede desde un navegador a la url http://IP_SERVER/test imprimir un texto en consola
-app.get('/test', (req,res) => console.log("Se ha accedido al recurso test del servidor"));
+ // Si se accede desde un navegador a la url http://IP_SERVER/test imprimir un texto en consola y enviar al navegador Hola
+app.get('/test', (req,res) => { console.log("Se ha accedido al recurso test del servidor");
+                                res.send('Hola'); });
+
 ~~~
 5. `node index.js` : Introducir el comando en la consola para inicializar el servidor y ver que aparece el texto http server escucha ... en la consola
-6. Comprobar que si accedemos desde un navegador a http://IP_SERVER/test en la consola aparece el texto Se ha accedido ...
+6. Comprobar que si accedemos desde un navegador a http://IP_SERVER/test en la consola aparece el texto Se ha accedido ... y en el navegador se ve Hola
 7. Ya hay un servidor http funcionando
