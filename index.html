@@ -1,0 +1,9 @@
+var express = require('express');
+const PORT = 8080;
+var app = express();
+
+// Aranque del servidor
+app.listen(PORT, () => console.log("http server escucha en el puerto " + PORT + " ...")); 
+// Si se accede desde un navegador a la url http://IP_SERVER/test imprimir un texto en consola y enviar Hola al navegador
+app.get('/test', (req,res) => { console.log("Se ha accedido al recurso test del servidor"); 
+				res.send("Hola")});
